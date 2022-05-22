@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Models\Instructorevent;
 use Illuminate\Http\Request;
 
@@ -31,8 +32,10 @@ class InstructoreventController extends Controller
      */
     public function create()
     {
+        $eventos= Event::all();
+
         $instructorevent = new Instructorevent();
-        return view('instructorevent.create', compact('instructorevent'));
+        return view('instructorevent.create', compact('instructorevent','eventos'));
     }
 
     /**
