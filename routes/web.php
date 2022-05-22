@@ -6,6 +6,7 @@ use App\Http\Controllers\EventController;
 use App\Http\Controllers\EventestudentController;
 use App\Http\Controllers\HourController;
 use App\Http\Controllers\InstructorController;
+use App\Http\Controllers\InstructoreventController;
 
 
 
@@ -35,4 +36,6 @@ Route::resource('instructors',InstructorController::class);
 Route::resource('classrooms',ClassroomController::class);
 Route::resource('events',EventController::class);
 Route::resource('eventestudents',EventestudentController::class);
+Route::resource('instructorevents',InstructoreventController::class);
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

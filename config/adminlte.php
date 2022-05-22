@@ -311,7 +311,7 @@ return [
                 [
                     'text' => 'Asignar Evento',
                     'icon_color' => 'cyan',
-                    'url'  => '#',
+                    'url'  => 'instructorevents/create',
                 ],
             ],
         ],
