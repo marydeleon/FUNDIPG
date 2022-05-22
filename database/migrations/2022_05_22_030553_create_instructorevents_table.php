@@ -15,13 +15,13 @@ class CreateInstructoreventsTable extends Migration
     {
         Schema::create('instructorevents', function (Blueprint $table) {
             $table->id();
-
+            // tabla 1
             $table->foreignId('id_evento')
             ->nullable()
             ->constrained('events')
             ->cascadeOnUpdate()
             ->nullOnDelete();
-
+            //tabla 2
             $table->foreignId('id_instructor')
             ->nullable()
             ->constrained('instructors')

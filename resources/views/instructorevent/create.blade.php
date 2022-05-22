@@ -2,7 +2,7 @@
 @section('title', 'Registrar Instructor a Evento')
 
 @section('template_title')
-    Create Instructorevent
+    Crear Instructorevent
 @endsection
 
 @section('content')
@@ -14,7 +14,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Instructorevent</span>
+                     <span class="card-title">Crear Instructorevent</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('instructorevents.store') }}"  role="form" enctype="multipart/form-data">
@@ -29,3 +29,4 @@
         </div>
     </section>
 @endsection
+

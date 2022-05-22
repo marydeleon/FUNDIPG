@@ -2,7 +2,7 @@
 @section('title', 'Registrar Instructor a Evento')
 
 @section('template_title')
-    Instructorevent
+    Instructorevents
 @endsection
 
 @section('content')
