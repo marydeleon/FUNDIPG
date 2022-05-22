@@ -37,28 +37,34 @@
                                     <tr>
                                         <th>No</th>
 
-										<th>Id Evento</th>
-										<th>Id Instructor</th>
+										<th>Id</th>
+										<th>Nombre de Instructor</th>
+										<th>Lista de Evento</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($instructorevents as $instructorevent)
+                                    @foreach ($instructores as $instructor)
                                         <tr>
                                             <td>{{ ++$i }}</td>
 
-											<td>{{ $instructorevent->id_evento }}</td>
-											<td>{{ $instructorevent->id_instructor }}</td>
+											<td>{{ $instructor->id }}</td>
+											<td>{{ $instructor->nombre }}</td>
 
                                             <td>
-                                                <form action="{{ route('instructorevents.destroy',$instructorevent->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('instructorevents.show',$instructorevent->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('instructorevents.edit',$instructorevent->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
+                                                @foreach ($instructorevents as $instructorevent)
+                                                @if ($instructor->id == $instructorevent->id_instructor)
+                                                {{$instructorevent->event->nombre}}
+                                                <b>Fecha:</b> {{$instructorevent->event->hour->fecha}}
+                                                <b>Hora incio:</b>{{$instructorevent->event->hour->inicio}}
+                                                <b>Hora que Finaliza</b> :{{$instructorevent->event->hour->fin}}
+                                                <br>
+
+                                                @endif
+
+                                                @endforeach
+
                                             </td>
                                         </tr>
                                     @endforeach

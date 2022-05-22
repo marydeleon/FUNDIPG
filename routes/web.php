@@ -36,7 +36,7 @@ Route::resource('instructors',InstructorController::class);
 Route::resource('classrooms',ClassroomController::class);
 Route::resource('events',EventController::class);
 Route::resource('eventestudents',EventestudentController::class);
-//ruta instructorevento
+
 Route::resource('instructorevents',InstructoreventController::class);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

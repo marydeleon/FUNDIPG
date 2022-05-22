@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Instructor;
 use App\Models\Instructorevent;
 use Illuminate\Http\Request;
 
@@ -20,8 +21,8 @@ class InstructoreventController extends Controller
     public function index()
     {
         $instructorevents = Instructorevent::paginate();
-
-        return view('instructorevent.index', compact('instructorevents'))
+        $instructores = Instructor::all();
+        return view('instructorevent.index', compact('instructorevents','instructores'))
             ->with('i', (request()->input('page', 1) - 1) * $instructorevents->perPage());
     }
 
@@ -33,9 +34,9 @@ class InstructoreventController extends Controller
     public function create()
     {
         $eventos= Event::all();
-
+        $instructores = Instructor::all();
         $instructorevent = new Instructorevent();
-        return view('instructorevent.create', compact('instructorevent','eventos'));
+        return view('instructorevent.create', compact('instructorevent','eventos','instructores'));
     }
 
     /**
@@ -49,6 +50,8 @@ class InstructoreventController extends Controller
         request()->validate(Instructorevent::$rules);
 
         $instructorevent = Instructorevent::create($request->all());
+
+
 
         return redirect()->route('instructorevents.index')
             ->with('success', 'Instructorevent created successfully.');

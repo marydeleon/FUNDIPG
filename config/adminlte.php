@@ -349,7 +349,7 @@ return [
         ],
         [
             'text' => 'Eventos',
-            'url'  => 'admin/register',
+            'url'  => 'instructorevents',
             'icon' => 'fas fa-fw fas fa-chalkboard-teacher',
         ],
 
