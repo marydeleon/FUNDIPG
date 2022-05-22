@@ -8,7 +8,7 @@
 
 @section('content')
 
-<img src="{{asset('/imagenes/fondo.jpg')}}" class="img-fluid" alt="...">
+<img src="{{asset('/imagenes/fondo.png')}}" class="img-fluid" alt="...">
 
 
 @stop
